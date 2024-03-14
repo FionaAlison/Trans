@@ -1,3 +1,5 @@
+import requests
+metadata_url = "http://169.254.169.254/latest/meta-data/"
 # Function to fetch instance metadata
 def fetch_instance_metadata():
     metadata_url = "http://169.254.169.254/latest/meta-data/"
