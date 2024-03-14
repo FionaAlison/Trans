@@ -1,7 +1,10 @@
 import boto3
+# Set the desired region (e.g., 'us-east-1')
+region_name = 'us-east-1'
+
 
 def fetch_instance_metadata(metadata_key):
-    ec2_client = boto3.client('ec2')
+    ec2_client = boto3.client('ec2', region_name=region_name)
     instance_id = ec2_client.instance_id
     metadata = ec2_client.describe_instances(InstanceIds=[instance_id])['Reservations'][0]['Instances'][0]['Metadata'][metadata_key]
     return metadata
